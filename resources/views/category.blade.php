@@ -8,10 +8,8 @@
         <h1>{{$category->name}}</h1>
     </div>
     <div class="d-flex card-deck mb-3 text-center">
-        @foreach($products as $product)
-            <div class="col-md-4">
-                @include('products', compact('products'))
-            </div>
+        @foreach($category->products as $product)
+            @include('products', compact('products'))
         @endforeach
     </div>
 </div>

@@ -13,7 +13,7 @@ class CreateOrdetProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('ordet_product', function (Blueprint $table) {
+        Schema::create('order_product', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('order_id');
             $table->integer('product_id');

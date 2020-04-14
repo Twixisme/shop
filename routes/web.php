@@ -45,17 +45,17 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-
+Route::post('/basket/remove/{id}', 'BasketController@remove')->name('remove');
+Route::post('/basket/place', 'BasketController@confirm')->name('confirm');
 
 Route::get('/', 'ProdController@index')->name('index');
 Route::get('/categories', 'ProdController@categories')->name('categories');
-Route::get('/{category}', 'ProdController@category')->name('category');
-Route::get('/product', 'ProdController@get')->name('products');
 
 Route::get('/basket', 'BasketController@basket')->name('basket');
 Route::get('/basket/place', 'BasketController@place')->name('place');
 Route::post('/basket/add/{id}', 'BasketController@add')->name('add');
-Route::post('/basket/remove/{id}', 'BasketController@remove')->name('remove');
-Route::post('/basket/place', 'BasketController@confirm')->name('confirm');
+
+Route::get('/{category}', 'ProdController@category')->name('category');
+Route::get('/product', 'ProdController@get')->name('product');
 
 

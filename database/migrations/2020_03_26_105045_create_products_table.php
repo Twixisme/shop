@@ -19,8 +19,6 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('about');
             $table->decimal('price');
-            $table->text('model');
-            $table->enum('availability',['yes', 'no']);
             $table->text('image')->nullable();
             $table->timestamps();
         });
