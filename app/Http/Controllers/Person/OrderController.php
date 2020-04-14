@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Http\Controllers\Person;
+
+use App\Models\Order;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
+class OrderController extends Controller
+{
+     public function index(){
+        $orders = Auth::user()->orders()->where('status', 1)->paginate(12);
+        return view('home', compact('orders'));
+    }
+
+    public function show(Order $order)
+    {
+    	if(!Auth::user()->orders->contains($order)){
+    		return back();
+    	}
+        return view('auth.orders.show', compact('order'));
+    }
+}
