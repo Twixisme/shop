@@ -29,7 +29,7 @@
                 <td>{{ $category->name }}</td>
             </tr>
             <tr>
-                <td>Logo</td>
+                <td>Картинка</td>
                 <td><img src="{{ Storage::url($category->logo)}}" height="240px"></td>
             </tr>
             </tbody>

@@ -14,7 +14,7 @@
             <h1>Добавить Товар</h1>
         @endisset
 
-        <form method="POST" enctype="multipart/form-data"
+        <form method="POST" class="form-horizontal" enctype="multipart/form-data"
               @isset($product)
               action="{{ route('products.update', $product) }}"
               @else
@@ -25,7 +25,7 @@
                     @method('PUT')
                 @endisset
                 @csrf
-                <div class="input-group row">
+                <div class="form-group">
                     <label for="name" class="col-sm-2 col-form-label">Название: </label>
                     <div class="col-sm-6">
                         @error('code')
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="input-group row">
+                <div class="form-group">
                     <label for="category_id" class="col-sm-2 col-form-label">Категория: </label>
                     <div class="col-sm-6">
                         <select name="category_id" id="category_id" class="form-control">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="input-group row">
+                <div class="form-group">
                     <label for="about" class="col-sm-2 col-form-label">Описание: </label>
                     <div class="col-sm-6">
                                         <textarea name="about" id="about" cols="72"
@@ -61,22 +61,31 @@
                     </div>
                 </div>
                 <br>
-                <div class="input-group row">
+                <div class="form-group">
                     <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-2">
                         <label class="btn btn-default btn-file">
                             Загрузить <input type="file" style="display: none;" name="image" id="image">
                         </label>
                     </div>
                 </div>
-                <div class="input-group row">
+                <div class="form-group">
                     <label for="price" class="col-sm-2 col-form-label">Цена: </label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <input type="text" class="form-control" name="price" id="price"
                                value="@isset($product){{ $product->price }}@endisset">
                     </div>
                 </div>
-                <button class="btn btn-success">Сохранить</button>
+                <div class="form-group">
+                    <label for="count" class="col-sm-2 col-form-label">Количество: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="count" id="count"
+                               value="@isset($product){{ $product->count }}@endisset">
+                    </div>
+                </div>
+                    <div class="col-sm-6">
+                        <button class="btn btn-success">Сохранить</button>
+                    </div>
             </div>
         </form>
     </div>

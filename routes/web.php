@@ -45,15 +45,28 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::post('/basket/remove/{id}', 'BasketController@remove')->name('remove');
-Route::post('/basket/place', 'BasketController@confirm')->name('confirm');
+
 
 Route::get('/', 'ProdController@index')->name('index');
 Route::get('/categories', 'ProdController@categories')->name('categories');
 
-Route::get('/basket', 'BasketController@basket')->name('basket');
-Route::get('/basket/place', 'BasketController@place')->name('place');
-Route::post('/basket/add/{id}', 'BasketController@add')->name('add');
+Route::group(['prefix' => 'basket'], function (){
+    Route::post('/add/{product}', 'BasketController@add')->name('add');
+
+    Route::group([
+        'middleware' => 'basket_not_empty',
+    ], function (){
+        Route::get('/', 'BasketController@basket')->name('basket');
+        Route::get('/place', 'BasketController@place')->name('place');
+        Route::post('/remove/{product}', 'BasketController@remove')->name('remove');
+        Route::post('/place', 'BasketController@confirm')->name('confirm');
+    });
+
+});
+
+
+Route::get('/about', 'AbouteController@index')->name('about');
+
 
 Route::get('/{category}', 'ProdController@category')->name('category');
 Route::get('/product', 'ProdController@get')->name('product');

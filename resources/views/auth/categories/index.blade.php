@@ -33,7 +33,7 @@
             </tbody>
         </table>
         {{$categories->links()}}
-        <a class="btn btn-succes" type="button" href="{{route('categories.create')}}">Add category</a>
+        <a class="btn btn-succes" type="button" href="{{route('categories.create')}}">Добавить категорию</a>
     </div>
 
 </div>

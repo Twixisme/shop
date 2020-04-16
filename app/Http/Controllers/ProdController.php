@@ -18,6 +18,7 @@ class ProdController extends Controller
 
     public  function index(ProductsFilterRequest $request)
     {
+
         $productsQuery = Product::query();
 
         if ($request->filled('price_from')){

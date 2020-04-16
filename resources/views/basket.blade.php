@@ -10,6 +10,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th>Изображение</th>
                     <th>Название</th>
                     <th>Кол-во</th>
                     <th>Цена</th>
@@ -20,7 +21,12 @@
                 @foreach($order->products as $product)
                     <tr>
                         <td>
-                            <a href="{{route('product', [$product->categories])}}">{{$product->name}}</a>
+                            <div class="img-div">
+                                <img src="{{Storage::url($product->image)}}" height="50px">
+                            </div>
+                        </td>
+                        <td>
+                            <h4 href="{{route('product', [$product->categories])}}">{{$product->name}}</h4>
                         </td>
                         <td><span class="badge">{{$product->pivot->count}}</span>
                             <div class="btn-group form-inline">
@@ -50,6 +56,19 @@
             <div class="btn-group pull-right" role="group">
                 <a type="button" class="btn btn-success" href="{{route('place')}}">Оформить заказ</a>
             </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="row">
+            <h1>Корзина</h1>
+            <div class="d-block">
+                <div class="img-div">
+                    <img src="{{Storage::url($product->image)}}" height="100px">
+                    <h4>{{$product->name}}</h4>
+                </div>
+            </div>
+
         </div>
     </div>
 @endsection

@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Панель администратора</div>
                 <div class="card-body">
                     <h1>Заказы</h1>
                     <table class="table">
@@ -32,14 +30,14 @@
                                             href="{{route('orders.show', $order)}}"
                                         @else
                                             href="{{route('person.orders.show', $order)}}"
-                                        @endif 
+                                        @endif
                                         >Открыть</a>
                                     </div>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                    </table>  
+                    </table>
                 </div>
             </div>
         </div>

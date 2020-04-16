@@ -1924,10 +1924,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
-  }
+  },
+  data: function data() {
+    return {
+      orders: this.order
+    };
+  },
+  props: ['order']
 });
 
 /***/ }),
@@ -37302,32 +37323,63 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+  return _c(
+    "div",
+    { staticClass: "col-sm-12 item-article", attrs: { id: "content" } },
+    [
+      _c("div", [
+        _c(
+          "div",
+          {
+            staticClass:
+              "scroll-container big-container shadow base-padding margin-btn"
+          },
+          [
+            _c("div", { staticClass: "flex-row no-sidebar" }, [
+              _c("aside", { staticClass: "flex-ch sidebar" }),
+              _vm._v(" "),
+              _c("section", { staticClass: "flex-ch content" }, [
+                _c("div", { staticClass: "static-content" }, [
+                  _c("h1", [_vm._v("О нас")]),
+                  _vm._v(
+                    '\n                        Первая специализированная сеть гаджетов и аксессуаров "А ты купи" укрепляет позицию надежного\n                        информационного источника в сфере IT-технологий. Мы нацелены на эффективное сотрудничество с\n                        национальными и региональными средствами массовой информации. Выбирая для заказа именно\n                        наш магазин вы обезпечиваете себя качественным обслуживанием, отличными товарами, а так же\n                        потресающим настроением.\n                        С момента открытия к нам поступило уже '
+                  ),
+                  _c("b", [_vm._v(_vm._s(_vm.orders))]),
+                  _vm._v(" заказов от счастливых покупателей "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(
+                    '\n                        Наши ответственные администраторы с удовольствием помогу, Вам, оформить заказ и\n                        остатся довольными в выборе именно нашего интернет-магазина с любовью ваш "А ты купи!".'
+                  ),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("b", [_vm._v("Наши контакты:")]),
+                  _c("br"),
+                  _vm._v(
+                    "\n                        e-mail: radionov980705@gmail.com"
+                  ),
+                  _c("br"),
+                  _vm._v("\n                        +38 095 375 19 12 "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(
+                    "\n                        Мы рады сотрудничеству с вами!"
+                  ),
+                  _c("br")
+                ])
+              ])
             ])
-          ])
-        ])
+          ]
+        )
       ])
-    ])
-  }
-]
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -49661,8 +49713,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\os\OSPanel\domains\myprod\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\os\OSPanel\domains\myprod\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! d:\os\OSPanel\domains\myprod\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! d:\os\OSPanel\domains\myprod\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

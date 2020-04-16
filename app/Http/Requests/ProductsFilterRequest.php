@@ -25,7 +25,15 @@ class ProductsFilterRequest extends FormRequest
     {
         return [
             'price_from' => 'nullable|numeric|min:0',
-            'price_to' => 'nullable|numeric|min:0',
+            'price_to' => 'nullable|numeric|min:0|>price_from',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'numeric' => 'Это поле для цифр',
+            '<price_form' => 'Это должно быть меньше',
         ];
     }
 }

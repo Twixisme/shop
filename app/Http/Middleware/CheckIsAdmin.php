@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\User;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 
 class CheckIsAdmin
 {
@@ -19,7 +19,7 @@ class CheckIsAdmin
     {
         $user = Auth::user()->is_admin;
         if($user!==1){
-            session()->flash('warning', 'You not admin!');
+            session()->flash('warning', 'Вы не имеете прав администратора!');
             return redirect()->route('categories');
         }
         return $next($request);
